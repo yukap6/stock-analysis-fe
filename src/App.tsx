@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/locale/zh_CN';
+// for date-picker i18n
+import 'dayjs/locale/zh-cn';
 import './App.css';
+import Graph from './Graph';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider locale={zhCN} theme={{ token: { colorPrimary: '#00b96b' } }}>
+      <div className="App">
+        <Graph />
+      </div>
+    </ConfigProvider>
   );
 }
 
